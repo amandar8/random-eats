@@ -1,0 +1,25 @@
+{
+  "name": "spin-to-eat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "node-sass --watch scss -o css"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paige-throck/spin-to-eat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paige-throck/spin-to-eat/issues"
+  },
+  "homepage": "https://github.com/paige-throck/spin-to-eat#readme",
+  "devDependencies": {
+    "node-sass": "^4.6.0"
+  }
+}

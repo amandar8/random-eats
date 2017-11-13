@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <script defer src="js/jquery-2.2.4.min.js"></script>
+  <script src='Winwheel.min.js'></script>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+  <title>Spin to Eat</title>
+</head>
+
+
+<body class="wheel-body">
+
+  <header class="wheel-header">
+  </header>
+
+
+  <main class="wheel-main">
+    <div class="container">
+      <div class="row">
+
+        <div class="row">
+          <div id="form">
+            <div class="col-sm-3" <div class="row">
+              <div class="input-field col s12">
+                <input value="" id="city" type="text" class="validate">
+                <label class="active" for="city">City</label>
+              </div>
+            </div>
+
+            <div class="input-field col-sm-12-offset border border-primary">
+              <select>
+                <option value="" disabled selected>Choose a Food Type</option>
+                <option value="1">Italian</option>
+                <option value="2">Chinese</option>
+                <option value="3">BBQ</option>
+                <option value="3">Sushi</option>
+                <option value="3">Sandwiches</option>
+                <option value="3">Burgers</option>
+              </select>
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div id="spin-wheel">
+            <div class="col-sm-6 border border-primary">
+
+
+              <!-- <div id ="wheel"></div> -->
+              <a href="#"><img width="400" height="400" src="https://cdn.modpizza.com/wp-content/uploads/2016/11/mod-pizza-maddy-default-e1479167621575.png" /></a>
+
+
+              <button class="btn-spin">Spin the wheel</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div id="results">
+            <div class="col-sm-3 border border-primary">
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    </div>
+  </main>
+
+
+  <footer class="wheel-footer">
+    <div class="container">
+    </div>
+  </footer>
+
+
+  <script src="Scripts/script.js"></script>
+
+</body>
+
+</html>
+
+#wheel:before {
+  content: '';
+  position: relative;
+  /*border: 4px solid rgba(0, 0, 0, 0.1);*/
+  width: 242px;
+  height: 242px;
+  border-radius: 50%;
+  z-index: 1000;
+}
+
+#inner-wheel {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 6s cubic-bezier(0, .99, .44, .99);
+  -moz-transition: all 6 cubic-bezier(0, .99, .44, .99);
+  -o-transition: all 6s cubic-bezier(0, .99, .44, .99);
+  -ms-transition: all 6s cubic-bezier(0, .99, .44, .99);
+  transition: all 6s cubic-bezier(0, .99, .44, .99);
+}
+
+#wheel div.sec {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 130px 75px 0;
+  border-color: #19c transparent;
+  transform-origin: 75px 129px;
+  left: 50px;
+  top: -4px;
+  opacity: 1;
+}
+
+#wheel div.sec:nth-child(1) {
+  transform: rotate(60deg);
+  -webkit-transform: rotate(60deg);
+  -moz-transform: rotate(60deg);
+  -o-transform: rotate(60deg);
+  -ms-transform: rotate(60deg);
+  border-color: #16a085 transparent;
+}
+
+#wheel div.sec:nth-child(2) {
+  transform: rotate(120deg);
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  -o-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  border-color: #2980b9 transparent;
+}
+
+#wheel div.sec:nth-child(3) {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  border-color: #34495e transparent;
+}
+
+#wheel div.sec:nth-child(4) {
+  transform: rotate(240deg);
+  -webkit-transform: rotate(240deg);
+  -moz-transform: rotate(240deg);
+  -o-transform: rotate(240deg);
+  -ms-transform: rotate(240deg);
+  border-color: #f39c12 transparent;
+}
+
+#wheel div.sec:nth-child(5) {
+  transform: rotate(300deg);
+  -webkit-transform: rotate(300deg);
+  -moz-transform: rotate(300deg);
+  -o-transform: rotate(300deg);
+  -ms-transform: rotate(300deg);
+  border-color: #d35400 transparent;
+}
+
+#wheel div.sec:nth-child(6) {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  border-color: #c0392b transparent;
+}
+
+#wheel div.sec .fa {
+  margin-top: -100px;
+  color: rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 10000000;
+  display: block;
+  text-align: center;
+  font-size: 36px;
+  margin-left: -15px;
+  text-shadow: rgba(255, 255, 255, 0.1) 0px -1px 0px, rgba(0, 0, 0, 0.2) 0px 1px 0px;
+}
+
+#spin {
+  width: 68px;
+  height: 68px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -34px 0 0 -34px;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 0px;
+  z-index: 1000;
+  background: #fff;
+  cursor: pointer;
+  font-family: 'Exo 2', sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+#spin:after {
+  content: "SPIN";
+  text-align: center;
+  line-height: 68px;
+  color: #CCC;
+  text-shadow: 0 2px 0 #fff, 0 -2px 0 rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 100000;
+  width: 68px;
+  height: 68px;
+  display: block;
+}
+
+#spin:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 20px 28px 20px;
+  border-color: transparent transparent #ffffff transparent;
+  top: -12px;
+  left: 14px;
+}
+
+#spin:active #inner-spin {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 5px inset;
+}
+
+#spin:active:after {
+  font-size: 15px;
+}
+
+
+/*ANIMATION*/
+
+@-webkit-keyframes hh {
+  0%, 100% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(7deg);
+    -webkit-transform: rotate(7deg);
+  }
+}
+
+@keyframes hh {
+  0%, 100% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(7deg);
+    -webkit-transform: rotate(7deg);
+  }
+}
+
+.spin {
+  -webkit-animation: hh 0.5s;
+  /* Chrome, Safari, Opera */
+  animation: hh 0.1s;
+}

@@ -3,51 +3,76 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Let's Get Eating</title>
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVE3jeaas1gBF4K4n79Ueu4eHe5Ca2pyk&libraries=places"></script>
 
-  <title>Spin to Eat</title>
+
+
 </head>
 
+<body>
 
-<body class="wheel-body">
 
-  <header class="wheel-header">
+  <header>
+    <h1>Let's Get Eating</h1>
   </header>
 
+  <div class="container.fluid">
+    <div class="row">
 
-  <main class="wheel-main">
-    <div class="container">
       <div class="row">
+        <div class="col-sm-12"></div>
+        <div id="form">
+          <form>
+            <div class="form-group">
+              <label for="cityName">Please Enter a city you are looking to dine in!</label>
+              <input type="city" class="form-control" id="cityName" aria-describedby="emailHelp" placeholder="Ex: Austin, TX">
+              <small id="city" class="form-text text-muted">I'm getting hungry!</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
-
-        <!-- <div id="wrapper"> -->
-
+    <!-- <div class="row"> -->
+    <div class="col-sm-6 postion-fixed">
+      <div id="wrapper">
         <div id="wheel">
           <div class="loading-overlay">
             <div class="spin-loader"></div>
-          
           </div>
         </div>
-
-        <div class="row">
-          <input type="button" id="button" value="submit"></div>
       </div>
-
     </div>
+
+    <div class="col-sm-6 postion-fixed border border-primary">
+      <div id="results">
+        <div id="listings"></div>
+        <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAb3b9RbnL7iVzNS_FncN7jLyRvxbop7yA
+    &q=Space+Needle,Seattle+WA" allowfullscreen>
+</iframe>
+      </div>
     </div>
-  </main>
+    <!-- </div> -->
+  </div>
+
+  </div>
+  </div>
 
 
-  <footer class="wheel-footer">
-    <div class="container">
-    </div>
+  <footer>
   </footer>
 
-
   <script src="Scripts/script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+
 
 </body>
 

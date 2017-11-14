@@ -1,16 +1,34 @@
+header {
+  text-align: center;
+  height: 100px;
+}
+
+/*body{
+  background-image: url("https://static.pexels.com/photos/349609/pexels-photo-349609.jpeg");
+  flex-flow: flex;
+}*/
+
+#form {
+  /*position: relative;*/
+  margin: 50px;
+}
+
+#wrapper {
+  position: fixed;
+  /*margin: 10px;*/
+  float: left;
+}
+
 #wheel {
   width: 450px;
   height: 400px;
   border-radius: 50%;
-  position: relative;
-  /*border: solid;*/
+  position: fixed;
   overflow: hidden;
-  border: 8px solid #fff;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px, rgba(0, 0, 0, 0.05) 0px 3px 0px;
-  transform: rotate(0deg);
   background: url("http://samequizy.pl/wp-content/uploads/2017/10/filing_images_401a0bdee329.jpg");
+  margin-left: 20px;
 }
-/*http://www.ideocolab.com/assets/images/food_head.jpg*/
+
 .loading-overlay {
   display: none;
   position: relative;
@@ -31,8 +49,20 @@
   /*top: 25%;*/
 }
 
+#results {
+  position: fixed;
+  /*margin: 10px;*/
+  float: right;
+  margin-right: 20px;
+}
 
-#button {
-  width: 120px;
-  text-transform: uppercase;
+/*#listings {
+  width: 450px;
+  height: 400px;
+  border: solid;
+  postion: fixed;
+}*/
+
+footer {
+  text-align: center;
 }

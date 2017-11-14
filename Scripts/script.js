@@ -68,11 +68,12 @@
   function addMarker(place) {
     var marker = new google.maps.Marker({
       map: map,
+      animation: google.maps.Animation.DROP,
       position: place.geometry.location,
       icon: {
-        url: 'https://developers.google.com/maps/documentation/javascript/images/circle.png',
+        // url: 'https://developers.google.com/maps/documentation/javascript/images/circle.png',
         anchor: new google.maps.Point(10, 10),
-        scaledSize: new google.maps.Size(10, 17)
+        scaledSize: new google.maps.Size(10, 15)
       }
     });
 
@@ -82,7 +83,8 @@
           console.error(status);
           return;
         }
-        infoWindow.setContent(result.name);
+        infoWindow.setContent(result.name + '<div><strong>' +
+          result.formatted_address + '</div>' + result.website + '</div>' + result.phone_number);
         infoWindow.open(map, marker);
       });
     });

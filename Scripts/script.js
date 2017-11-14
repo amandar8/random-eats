@@ -18,6 +18,7 @@
       }
       configureMap(currentLocation);
     });
+
     function configureMap(currentLocation) {
       map = new google.maps.Map(document.getElementById('foodMap'), {
         center: currentLocation,
@@ -39,12 +40,13 @@
 
       // The idle event is a debounced event, so we can query & listen without
       // throwing too many requests at the server.
-      map.addListener('idle', performSearch);
+      // map.addListener('idle', performSearch);
     }
 
   }
 
   function performSearch(searchTerm) {
+    console.log(searchTerm);
     var request = {
       bounds: map.getBounds(),
       keyword: searchTerm
@@ -87,10 +89,12 @@
   }
 
   function configureSubmitEventListener() {
-    let submitButton = $(".btn btn-primary");
-    submitButton.click(function(){
-        var option_user_selection = document.getElementById("foodType").options[document.getElementById("foodType").selectedIndex ].text
-        performSearch(option_user_selection);
+    let foodForm = $("#foodForm");
+    foodForm.submit(function(event) {
+      event.preventDefault();
+      let foodSelectElement = $('#foodType option:selected');
+      let option_user_selection = foodSelectElement.text()
+      performSearch(option_user_selection);
     });
 
   }

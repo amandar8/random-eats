@@ -1,47 +1,36 @@
 (function() {
 
-
-  function initMap() {
-    let currentLocation;
-    navigator.geolocation.getCurrentPosition(function(position) {
-      if (position) {
-        currentLocation = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-      } else {
-        // Default to somewhere in Austin.
-        currentLocation = {
-          lat: -33.867,
-          lng: 151.206
-        }
-      }
-      configureMap(currentLocation);
+  function configureMap(currentLocation) {
+    map = new google.maps.Map(document.getElementById('foodMap'), {
+      center: currentLocation,
+      zoom: 15,
+      styles: [{
+        stylers: [{
+          visibility: 'simplified'
+        }]
+      }, {
+        elementType: 'labels',
+        stylers: [{
+          visibility: 'off'
+        }]
+      }]
     });
 
-    function configureMap(currentLocation) {
-      map = new google.maps.Map(document.getElementById('foodMap'), {
-        center: currentLocation,
-        zoom: 15,
-        styles: [{
-          stylers: [{
-            visibility: 'simplified'
-          }]
-        }, {
-          elementType: 'labels',
-          stylers: [{
-            visibility: 'off'
-          }]
-        }]
-      });
+    infoWindow = new google.maps.InfoWindow();
+    service = new google.maps.places.PlacesService(map);
 
-      infoWindow = new google.maps.InfoWindow();
-      service = new google.maps.places.PlacesService(map);
+    // The idle event is a debounced event, so we can query & listen without
+    // throwing too many requests at the server.
+    // map.addListener('idle', performSearch);
+  }
 
-      // The idle event is a debounced event, so we can query & listen without
-      // throwing too many requests at the server.
-      // map.addListener('idle', performSearch);
+  function initMap() {
+    let currentLocation = {
+      lat: 30.272,
+      lng: -97.760
     }
+    configureMap(currentLocation);
+
 
   }
 
@@ -101,6 +90,44 @@
 
   }
 
+
+
+  function getUserLocation() {
+    console.log(getUserLocation);
+    let location = $("#current-location");
+    location.submit(function(event) {
+      event.preventDefault();
+      let userLocation;
+      navigator.geolocation.getCurrentPosition(function(position) {
+        userLocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+
+        console.log(userLocation);
+          configureMap(userLocation);
+      });
+    }, function(error){
+      console.log("errors");
+      console.log(error);
+    });
+
+
+  }
+
+
+  // function userMap() {
+  //   let location = $("#current-location");
+  //   location.submit(function(event) {
+  //     // event.preventDefault();
+  //     getUserLocation();
+  //     console.log(location);
+  //   });
+  //
+  // }
+
+
   initMap();
   configureSubmitEventListener();
+  getUserLocation();
 })();

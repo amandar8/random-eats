@@ -1,5 +1,10 @@
 (function() {
 
+  let locationButton = document.getElementById('current-location');
+      locationButton.addEventListener('click', function() {
+        getUserLocation();
+      });
+
   function configureMap(currentLocation) {
     map = new google.maps.Map(document.getElementById('foodMap'), {
       center: currentLocation,
@@ -93,29 +98,15 @@
 
 
   function getUserLocation() {
-    console.log(getUserLocation);
-    let location = $("#current-location");
-    location.submit(function(event) {
-      event.preventDefault();
-      let userLocation;
+    let userLocation;
       navigator.geolocation.getCurrentPosition(function(position) {
-        userLocation = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-
-        console.log(userLocation);
-          configureMap(userLocation);
+          currentLocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+              };
+                configureMap(currentLocation);
       });
-    }, function(error){
-      console.log("errors");
-      console.log(error);
-    });
-
-
   }
-
-
   // function userMap() {
   //   let location = $("#current-location");
   //   location.submit(function(event) {

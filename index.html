@@ -20,22 +20,27 @@
 <body>
 
 
+
   <header>
-  <div class ="row">
-    <h1>Let's Get Eating</h1>
-    <h3> Pick A Food Type and Click Away</h3>
+    <div class="row">
+      <h1>Let's Get Eating</h1>
+      <h3> Pick A Food Type and Click Away</h3>
   </header>
-</div>
+  </div>
 
   <div class="container">
     <div class="row">
 
-    <div class = "row">
-      <button type="submit" class="btn.md btn-primary" id="current-location">Current Location</button>
-    </div>
+      <!-- <div class="row">
+        <button type="submit" class="btn.md btn-primary" id="current-location">Current Location</button>
+      </div> -->
 
 
-      <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+
+
+
+<div id="wrap">
+        <input id="pac-input" class="controls" type="text" placeholder="Enter a location"></div>
       <div id="foodMap" class="foodMap">
       </div>
       <div id="infowindow-content">
@@ -44,9 +49,9 @@
       </div>
 
 
-      <div class="row">
+      <div class="row" class="text-box">
         <div class="col-sm-12">
-          <p> Pick a food and click submit! If you are looking for another location, move around the city by using the hand that appears on the map!</p>
+          <p> Pick a food and click submit! If you are looking for another location, move around the city by using the hand that appears on the map or use the Location box located on the map!</p>
         </div>
       </div>
 
@@ -71,11 +76,16 @@
                   <option>Mexican</option>
                 </select>
               </div>
-              <button type="submit" class="btn.md btn-primary" id = "food-button">Submit</button>
+
             </form>
+            <button type="submit" class="btn.md btn-primary" id="food-button">Find Restaurants</button>
+            <button type="submit" class="btn.md btn-primary" id="random-button">Random Restaurant</button>
           </div>
 
         </div>
+
+
+
       </div>
 
       <footer>

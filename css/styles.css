@@ -2,6 +2,12 @@ header {
   text-align: center;
   height: 50px;
   margin-bottom: 50px;
+  text: black;
+}
+
+
+body{
+  background-image: url("https://www.rd.com/wp-content/uploads/2016/02/april-2016-aol-food-carrots.jpg");
 }
 
 .foodMap {
@@ -29,27 +35,37 @@ header {
 .controls:focus {
   border-color: #4d90fe;
 }
+
 .title {
   font-weight: bold;
 }
+
 #infowindow-content {
   display: none;
 }
+
 #map #infowindow-content {
   display: inline;
 }
 
-.food-form{
-  /*float: left;*/
-  margin:20px;
+
+/*#current-location {
+  margin: 5px;
+}*/
+
+.text-box{
+  background-color: white;
 }
 
-
-#current-location {
-  margin: 5px;
+p{
+  font-size: 20px;
+  font-color:black;
+  background-color: white;
+  margin:10px;
+  box-shadow: 2px 2px 10px 2px;
+  border-radius: 5px;
 }
 
 footer {
   text-align: center;
-
 }

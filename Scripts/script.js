@@ -17,25 +17,17 @@
     });
     infoWindow = new google.maps.InfoWindow();
     service = new google.maps.places.PlacesService(map);
-  }
-  ///////////////////////////////////////
 
-  function initMap() {
-    let currentLocation = {
-      lat: 30.272,
-      lng: -97.760
-    }
-    configureMap(currentLocation);
-    var input = document.getElementById('pac-input');
-    var autocomplete = new google.maps.places.Autocomplete(input);
+    let input = document.getElementById('pac-input');
+    let autocomplete = new google.maps.places.Autocomplete(input);
     autocomplete.bindTo('bounds', map);
 
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-    var infowindow = new google.maps.InfoWindow();
-    var infowindowContent = document.getElementById('infowindow-content');
+    let infowindow = new google.maps.InfoWindow();
+    let infowindowContent = document.getElementById('infowindow-content');
     infowindow.setContent(infowindowContent);
-    var marker = new google.maps.Marker({
+    let marker = new google.maps.Marker({
       map: map
     });
     marker.addListener('click', function() {
@@ -44,7 +36,7 @@
 
     autocomplete.addListener('place_changed', function() {
       infowindow.close();
-      var place = autocomplete.getPlace();
+      let place = autocomplete.getPlace();
       if (!place.geometry) {
         return;
       }
@@ -70,44 +62,76 @@
       infowindow.open(map, marker);
     });
   }
+  ///////////////////////////////////////
+
+  function initMap() {
+    let currentLocation = {
+      lat: 30.272,
+      lng: -97.760
+    }
+    configureMap(currentLocation);
+
+
+  }
   ////////////////////////////////////////
 
-  let locationButton = document.getElementById('current-location');
-  locationButton.addEventListener('click', function() {
-    getUserLocation();
-  });
+  // let locationButton = document.getElementById('current-location');
+  // locationButton.addEventListener('click', function() {
+  //   getUserLocation();
+  // });
 
-  var myMarkers = [];
 
+
+  let myMarkers = [];
+  //////////////////////////////////////////////
   function performSearch(searchTerm) {
     console.log(searchTerm);
-    var request = {
+    let request = {
       bounds: map.getBounds(),
       keyword: searchTerm
     };
     service.radarSearch(request, setMarkers);
   }
 
-
   function setMarkers(results, status) {
     if (status !== google.maps.places.PlacesServiceStatus.OK) {
-      console.log(results);
+
       console.error(status);
       return;
     }
-    for (var i = 0, result; result = results[i]; i++) {
+    for (let i = 0, result; result = results[i]; i++) {
 
       //results.length.Random....
       addMarker(result);
 
-      console.log(result);
-      console.log(results);
+
     }
   }
+  ///////////////////////////////////////
+  function randomSearch(searchTerm) {
+    console.log(searchTerm);
+    let request = {
+      bounds: map.getBounds(),
+      keyword: searchTerm
+    };
+    service.radarSearch(request, randomSetMarkers);
+  }
 
+  function randomSetMarkers(results, status) {
+    if (status !== google.maps.places.PlacesServiceStatus.OK) {
+
+      console.error(status);
+      return;
+    }
+      let randomItem = results[Math.floor(Math.random()*results.length)];
+      addMarker(randomItem);
+
+
+  }
+  /////////////////////////////////////////////////////
 
   function addMarker(place) {
-    var marker = new google.maps.Marker({
+    let marker = new google.maps.Marker({
       map: map,
       animation: google.maps.Animation.DROP,
       position: place.geometry.location,
@@ -118,14 +142,14 @@
       }
 
     });
-      myMarkers.push(marker);
+    myMarkers.push(marker);
 
 
-      function removeMarkers(){
-          for(i=0; i<myMarkers.length; i++){
-              myMmarkers[i].setMap(null);
-          }
+    function removeMarkers() {
+      for (i = 0; i < myMarkers.length; i++) {
+        myMarkers[i].setMap(null);
       }
+    }
 
 
     google.maps.event.addListener(marker, 'click', function() {
@@ -142,35 +166,82 @@
 
   }
 
-  function configureSubmitEventListener() {
+  function configureRestaurantButton() {
     function removeMarkers() {
       for (i = 0; i < myMarkers.length; i++) {
         myMarkers[i].setMap(null);
       }
     }
-    let foodForm = $("#foodForm");
-    foodForm.submit(function(event) {
-      event.preventDefault();
+    let foodButton = document.getElementById('food-button');
+    foodButton.addEventListener('click', function() {
       removeMarkers();
       let foodSelectElement = $('#foodType option:selected');
       performSearch(foodSelectElement.text());
     });
   }
 
-  function getUserLocation() {
-    let userLocation;
-    navigator.geolocation.getCurrentPosition(function(position) {
-      currentLocation = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      configureMap(currentLocation);
+
+  function configureRandomRestaurant() {
+    function removeMarkers() {
+      for (i = 0; i < myMarkers.length; i++) {
+        myMarkers[i].setMap(null);
+      }
+    }
+    let randomButton = document.getElementById('random-button');
+    randomButton.addEventListener('click', function() {
+      removeMarkers();
+      let foodSelectElement = $('#foodType option:selected');
+      randomSearch(foodSelectElement.text());
     });
   }
 
 
+  // function configureSubmitEventListener() {
+  //     function removeMarkers() {
+  //       for (i = 0; i < myMarkers.length; i++) {
+  //         myMarkers[i].setMap(null);
+  //       }
+  //     }
+  //     let foodForm = $("#foodForm");
+  //     let randomForm = $("#random-button");
+  //     foodForm.submit(function(event) {
+  //       console.log("this is working!!!!!")
+  //       event.preventDefault();
+  //       removeMarkers();
+  //       let foodSelectElement = $('#foodType option:selected');
+  //       performSearch(foodSelectElement.text());
+  //     });
+  //     randomForm.submit(function(event) {
+  //       console.log("this is my call")
+  //       event.preventDefault();
+  //       removeMarkers();
+  //       let foodSelectElement = $('#foodType option:selected');
+  //       performSearch(foodSelectElement.text());
+  //     });
+  //   }
+  //
+
+
+
+  // function getUserLocation() {
+  //   let userLocation;
+  //   navigator.geolocation.getCurrentPosition(function(position) {
+  //     userLocation = {
+  //       lat: position.coords.latitude,
+  //       lng: position.coords.longitude
+  //     };
+  //     configureMap(userLocation);
+  //   });
+  //
+  // }
+
+
 
   initMap();
-  configureSubmitEventListener();
-  getUserLocation();
+  // configureSubmitEventListener();
+  configureRestaurantButton();
+  configureRandomRestaurant();
+  // getUserLocation();
 })();
+
+// google.maps.event.addDomListener(window, 'load', initialize);

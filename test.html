@@ -125,3 +125,30 @@
         async defer></script>
   </body>
 </html>
+
+
+
+var setMarkers = (function() {
+    var oldMarkers = null;
+    return function(map, locations){
+        //Clearing markers, if they exist
+        if(oldMarkers && oldMarkers.length !== 0){
+            for(var i = 0; i < oldMarkers.length; ++i){
+                oldMarkers[i].setMap(null);
+            }
+        }
+        //Adding new markers
+        oldMarkers = [];
+        for (var i = 0; i < locations.length; i++) {
+            var newmarker = locations[i];
+            var myLatLng = new google.maps.LatLng(newmarker[1], newmarker[2]);
+            var marker = new google.maps.Marker({
+               position: myLatLng,
+               map: map,
+               title: newmarker[0],
+               zIndex: newmarker[3]
+            });
+            oldMarkers.push( marker );
+        }
+   };
+})();

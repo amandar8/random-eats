@@ -21,27 +21,42 @@
 
 
   <header>
+  <div class ="row">
     <h1>Let's Get Eating</h1>
-      <h3> Pick A Food Type and Click Away</h3>
+    <h3> Pick A Food Type and Click Away</h3>
   </header>
+</div>
 
-  <div class="container.fluid">
+  <div class="container">
     <div class="row">
 
-      <button type="submit" class="btn btn-primary" id ="current-location">Current Location</button>
+    <div class = "row">
+      <button type="submit" class="btn.md btn-primary" id="current-location">Current Location</button>
+    </div>
 
+
+      <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
       <div id="foodMap" class="foodMap">
+      </div>
+      <div id="infowindow-content">
+        <span id="place-name" class="title"></span><br> Place ID <span id="place-id"></span><br>
+        <span id="place-address"></span>
       </div>
 
 
       <div class="row">
+        <div class="col-sm-12">
+          <p> Pick a food and click submit! If you are looking for another location, move around the city by using the hand that appears on the map!</p>
+        </div>
+      </div>
 
-        <div class="row">
-          <div class="col-sm-12"></div>
-          <div id="form">
+      <div class="row">
+
+        <div class="col-sm-8">
+          <div id="food-form" class="food-form">
             <form id="foodForm">
               <div class="form-group">
-                <label for="sel1">Select list:</label>
+                <label for="sel1">Select a food!</label>
                 <select class="form-control" id="foodType">
                   <option>Pizza</option>
                   <option>Chinese</option>
@@ -54,27 +69,23 @@
                   <option>BBQ</option>
                   <option>Tacos</option>
                   <option>Mexican</option>
-              </select>
+                </select>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-
+              <button type="submit" class="btn.md btn-primary" id = "food-button">Submit</button>
             </form>
           </div>
+
         </div>
       </div>
 
+      <footer>
+      </footer>
 
-    </div>
-  </div>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
 
-  <footer>
-  </footer>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb3b9RbnL7iVzNS_FncN7jLyRvxbop7yA&libraries=places"></script>
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb3b9RbnL7iVzNS_FncN7jLyRvxbop7yA&libraries=places"></script>
-
-  <script src="Scripts/script.js"></script>
+      <script src="Scripts/script.js"></script>
 </body>
 
 </html>

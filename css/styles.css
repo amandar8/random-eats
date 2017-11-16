@@ -1,13 +1,31 @@
-header {
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.home-body {
+  background-image: url("https://www.rd.com/wp-content/uploads/2016/02/april-2016-aol-food-carrots.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.index-body {
+  background-image: url("https://bloximages.newyork1.vip.townnews.com/roanoke.com/content/tncms/assets/v3/editorial/3/90/390be8b3-a986-5cec-8db5-9685bd8eb757/598490a40c7b9.image.jpg?resize=1200%2C876");
+  background-repeat: no-repeat;
+  /*background-size: contain;*/
+  background-position: center;
+}
+
+.home-button {
+  margin-top: 400px;
+}
+
+.index-header {
   text-align: center;
   height: 50px;
   margin-bottom: 50px;
   text: black;
-}
-
-
-body{
-  background-image: url("https://www.rd.com/wp-content/uploads/2016/02/april-2016-aol-food-carrots.jpg");
 }
 
 .foodMap {
@@ -48,24 +66,25 @@ body{
   display: inline;
 }
 
-
 /*#current-location {
   margin: 5px;
 }*/
 
-.text-box{
+.text-box {
   background-color: white;
 }
 
-p{
+p {
   font-size: 20px;
-  font-color:black;
-  background-color: white;
-  margin:10px;
-  box-shadow: 2px 2px 10px 2px;
+  font-color: black;
+  /*background-color: white;*/
+  margin: 10px;
+  text-align: center;
+  /*box-shadow: 2px 2px 10px 2px;*/
   border-radius: 5px;
 }
 
-footer {
+.index-footer {
   text-align: center;
+  height: 100px;
 }

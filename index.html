@@ -19,32 +19,35 @@
 </head>
 
 <body class="index-body">
-
-
-
-  <header class = "index-header">
-    <div class="row">
-      <h3>Let's Eat</h3>
-      <h3> Pick A Cuisine and Click Away</h3>
-    </div>
-  </header>
-
-
   <div class="container">
+
+
+    <header class="index-header">
+
+      <div id="wrap">
+        <h2>Let's Eat</h2>
+        <h2> Pick A Cuisine and Click Away</h2>
+
+      </div>
+    </header>
+
+
+
     <div class="row">
 
-      <!-- <div class="row">
-        <button type="submit" class="btn.md btn-primary" id="current-location">Current Location</button>
-      </div> -->
-    <div id="wrap">
-        <input id="pac-input" class="controls" type="text" placeholder="Enter a location"></div>
-      <div id="foodMap" class="foodMap">
-      </div>
-      <div id="infowindow-content">
-        <span id="place-name" class="title"></span><br> Place ID <span id="place-id"></span><br>
-        <span id="place-address"></span>
-      </div>
 
+
+        <div id="wrap">
+          <input id="pac-input" class="controls" type="text" placeholder="Enter a location"></div>
+
+        <div id="foodMap" class="foodMap"></div>
+
+        <div id="infowindow-content">
+      <img src="" width="14" height="14" id="place-icon">
+      <span id="place-name"  class="title"></span><br>
+      <span id="place-address"></span>
+        </div>
+      </div>
 
       <div class="row" class="text-box">
         <div class="col-sm-12">
@@ -55,11 +58,12 @@
       <div class="row">
 
         <div class="col-sm-12">
-          <div id="food-form" class="food-form">
-            <form id="foodForm">
-              <div class="form-group">
-                <label for="sel1">Select a food!</label>
-                <select class="form-control" id="foodType">
+          <div id="wrap">
+            <div id="food-form" class="food-form">
+              <form id="foodForm">
+                <div class="form-group">
+                  <label for="sel1">Select a food!</label>
+                  <select class="form-control" id="foodType">
                   <option>Pizza</option>
                   <option>Chinese Food</option>
                   <option>Sushi</option>
@@ -74,21 +78,23 @@
                   <option>Sandwiches</option>
                   <option>Steak</option>
                 </select>
-              </div>
+                </div>
 
-            </form>
-            <button type="submit" class="btn.lg btn-primary" id="food-button">Find Restaurants</button>
-            <button type="submit" class="btn.md btn-primary" id="random-button">Random Restaurant</button>
+              </form>
+              <button type="submit" class="btn.lg btn-primary" id="food-button">Find Restaurants</button>
+              <button type="submit" class="btn.md btn-primary" id="random-button">Random Restaurant</button>
+            </div>
+
           </div>
 
         </div>
 
-
+        <footer class="index-footer">
+        </footer>
 
       </div>
 
-      <footer class ="index-footer">
-      </footer>
+
 
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
 

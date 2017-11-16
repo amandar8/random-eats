@@ -26,6 +26,7 @@
     "materialize": "^1.0.0",
     "pixi.js": "^4.6.0",
     "spin.js": "^3.0.0",
+    "tether-tooltip": "^1.2.0",
     "winwheel": "^1.0.1",
     "zomato": "^1.1.0",
     "zomato.js": "^1.1.0"

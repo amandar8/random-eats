@@ -1,10 +1,13 @@
 html, body {
   height: 100%;
   width: 100%;
+  font-family: 'Merienda';
 }
 
 .btn-primary.raised {
   box-shadow: 0 3px 0 0 #007299;
+  font-family: 'Merienda';
+
 }
 
 .btn-primary.raised:active, .btn-primary.raised.active {
@@ -17,33 +20,34 @@ html, body {
 .text-box {
   background-color: white;
   margin-top: 5%;
-  border: solid;
+  /*border: solid;*/
 }
 
 p {
+  font-family: 'Merienda';
   font-size: 16px;
   font-color: black;
   margin-top: 1%;
   margin-left: 20%;
   margin-right: 20%;
   text-align: center;
-  border-radius: 5px;
+
 }
 
-#carousel-food {
+.carousel {
   height: 80%;
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
-  border: solid;
+  /*border: solid;*/
   /*margin-top: 50%;*/
 }
 
 .hungry {
   text-align: center;
-  margin-top: 5%;
+  margin-top: 2%;
   margin-bottom: 5%;
-  border: solid;
+  /*border: solid;*/
 }
 
 .hungry-button {
@@ -58,24 +62,30 @@ p {
   text: black;
 }
 
-.index-body {
+.section {
+  z-index: -1;
   height: 100%;
   width: 100%;
-  margin: auto;
-  background-image: url("https://bloximages.newyork1.vip.townnews.com/roanoke.com/content/tncms/assets/v3/editorial/3/90/390be8b3-a986-5cec-8db5-9685bd8eb757/598490a40c7b9.image.jpg?resize=1200%2C876");
+  /*margin: auto;*/
+  background-image: url("https://www.rd.com/wp-content/uploads/2016/02/april-2016-aol-food-carrots.jpg");
+  position: absolute;
   background-repeat: no-repeat;
-  background-size: cover;
-  /*background-position: center;*/
 }
 
-h3 {
+.heading-lets-eat {
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+h2 {
+  font-family: 'Merienda';
   font-size: 2rem;
   line-height: 2rem;
   margin-top: calc((1.5rem - 2rem) + 1.5rem);
   margin-bottom: 1.5rem;
 }
 
-#wrap {
+.wrap {
   width: 100%;
   height: 100%;
   margin: auto;
@@ -91,7 +101,7 @@ h3 {
   border: 1px solid transparent;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
-  font-family: Roboto;
+  font-family: 'Merienda';
   font-size: 15px;
   font-weight: 300;
   height: 29px;
@@ -118,11 +128,9 @@ h3 {
   text-align: center;
   margin-left: 20%;
   margin-right: 20%;
+  color: white;
+  text-shadow: 1px 1px 1px black;
 }
-
-/*.index-footer{
-  margin-bottom: 5%;
-}*/
 
 @media (max-width: 440px) {
   h2 {

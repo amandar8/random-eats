@@ -345,12 +345,13 @@
           return;
         }
         infoWindow.setContent(result.name + '<div><strong>' +
-          result.formatted_address + '</div>' + result.website + '</div>' + result.phone_number);
+          result.formatted_address + '</div>' + result.url + '</div>' + result.phone);
         infoWindow.open(map, marker);
       });
     });
-
   }
+
+
 
   function configureRestaurantButton() {
     function removeMarkers() {
@@ -381,11 +382,26 @@
     });
   }
 
+  function configureRatingRestaurant() {
+    function removeMarkers() {
+      for (i = 0; i < myMarkers.length; i++) {
+        myMarkers[i].setMap(null);
+      }
+    }
+    let randomButton = document.getElementById('rating-button');
+    randomButton.addEventListener('click', function() {
+      removeMarkers();
+      let ratingSelectElement = $('#starType option:selected');
+      performSearch(ratingSelectElement.text());
+    });
+  }
+
 
 
 
   initMap();
   configureRestaurantButton();
   configureRandomRestaurant();
+  configureRatingRestaurant();
 
 })();

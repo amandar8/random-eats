@@ -9,6 +9,7 @@
 
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>
   <link rel="stylesheet" href="css/styles.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -37,33 +38,31 @@
 
 
 
-        <div id="wrap">
-          <input id="pac-input" class="controls" type="text" placeholder="Enter a location"></div>
+      <div id="wrap">
+        <input id="pac-input" class="controls" type="text" placeholder="Enter a location"></div>
 
-        <div id="foodMap" class="foodMap"></div>
+      <div id="foodMap" class="foodMap"></div>
 
-        <div id="infowindow-content">
-      <img src="" width="14" height="14" id="place-icon">
-      <span id="place-name"  class="title"></span><br>
-      <span id="place-address"></span>
-        </div>
+      <div id="infowindow-content">
+        <img src="" width="14" height="14" id="place-icon">
+        <span id="place-name" class="title"></span><br>
+        <span id="place-address"></span>
       </div>
+    </div>
 
-      <div class="row" class="text-box">
-        <div class="col-sm-12">
-          <p> Pick a food and click submit! If you are looking for another location, move around the city by using the hand that appears on the map or use the Location box located on the map!</p>
-        </div>
-      </div>
 
-      <div class="row">
 
-        <div class="col-sm-12">
-          <div id="wrap">
-            <div id="food-form" class="food-form">
-              <form id="foodForm">
-                <div class="form-group">
-                  <label for="sel1">Select a food!</label>
-                  <select class="form-control" id="foodType">
+    <div class="row">
+
+      <div class="col-sm-12">
+
+        <div id="food-form" class="food-form">
+          <form id="foodForm">
+
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="sel1">Select a food!</label>
+                <select class="form-control" id="foodType">
                   <option>Pizza</option>
                   <option>Chinese Food</option>
                   <option>Sushi</option>
@@ -78,29 +77,46 @@
                   <option>Sandwiches</option>
                   <option>Steak</option>
                 </select>
-                </div>
-
-              </form>
-              <button type="submit" class="btn.lg btn-primary" id="food-button">Find Restaurants</button>
-              <button type="submit" class="btn.md btn-primary" id="random-button">Random Restaurant</button>
+              </div>
             </div>
 
-          </div>
 
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="sel1">Select a Meal Time!</label>
+                <select class="form-control" id="starType">
+                  <option>Breakfast</option>
+                  <option>Lunch</option>
+                  <option>Dinner</option>
+
+                </select>
+              </div>
+            </div>
+
+          </form>
+
+
+          <button type="submit" class="btn btn-primary btn-md raised" id="food-button">Find Restaurants</button>
+          <button type="submit" class="btn btn-primary btn-md raised" id="random-button">Random Restaurant</button>
+          <button type="submit" class="btn btn-primary btn-md raised" id="rating-button">Meal Time</button>
         </div>
 
-        <footer class="index-footer">
-        </footer>
+
+
+
 
       </div>
 
+    </div>
 
+    <footer class="index-footer">
+    </footer>
 
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
 
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb3b9RbnL7iVzNS_FncN7jLyRvxbop7yA&libraries=places"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb3b9RbnL7iVzNS_FncN7jLyRvxbop7yA&libraries=places"></script>
 
-      <script src="Scripts/script.js"></script>
+    <script src="Scripts/script.js"></script>
 </body>
 
 </html>

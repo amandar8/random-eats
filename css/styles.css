@@ -60,6 +60,9 @@ html, body {
   height: 10%;
   text: black;
 }
+#open-button{
+  margin-top: 20%;
+}
 
 .section {
   z-index: -1;

@@ -28,7 +28,7 @@
     <header class="index-header">
 
     <div class="row">
-      <div class="col-sm-2"></div>
+      <div class="col-sm-2"><button type="submit" class="btn btn-primary btn-md raised" id="open-button">Restaurants Open Now</button></div>
 
         <div class = "col-sm-8">
       <div class="wrap">
@@ -44,6 +44,7 @@
 
 
 
+
     <div class="row">
       <div class="col-sm-1"></div>
 
@@ -51,12 +52,8 @@
         <div class="wrap">
           <input id="pac-input" class="controls" type="text" placeholder="Enter a location"></div>
 
-
-
         <div id="foodMap" class="foodMap">
-          <div id='loadingmessage' style='display:none'>
-            <img  src='https://app.joinmunch.com/upload/design/1b92a09d8_aa820_Thai_Noodles.gif'/>
-          </div>
+
 
         </div>
 
@@ -79,10 +76,12 @@
 
             <div class="col-sm-6">
               <div class="form-group">
-                <label for="sel1">Select a food!</label>
+                <label for="sel1">Select a type of Restaurant!</label>
                 <select class="form-control" id="foodType">
                   <option>Pizza</option>
                   <option>Dim-Sum</option>
+                  <option>Chinese</option>
+                  <option>Ramen</option>
                   <option>Sushi</option>
                   <option>Italian</option>
                   <option>Burgers</option>
@@ -105,6 +104,7 @@
                   <option>Breakfast</option>
                   <option>Lunch</option>
                   <option>Dinner</option>
+                  <option>Happy Hour</option>
 
                 </select>
               </div>
@@ -112,15 +112,16 @@
 
           </form>
 
+          <div class = "row">
 
           <button type="submit" class="btn btn-primary btn-md raised" id="food-button">Find Restaurants</button>
           <button type="submit" class="btn btn-primary btn-md raised" id="random-button">Random Restaurant</button>
+
+
           <button type="submit" class="btn btn-primary btn-md raised" id="rating-button">Meal Time</button>
         </div>
-
-
-
-
+        
+      </div>
 
       </div>
 

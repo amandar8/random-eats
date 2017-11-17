@@ -297,7 +297,7 @@
       bounds: map.getBounds(),
       keyword: searchTerm
     };
-    // $('#loadingmessage').show();
+
     service.radarSearch(request, randomSetMarkers);
   }
 
@@ -327,8 +327,6 @@
 
     });
     myMarkers.push(marker);
-      // $('#loadingmessage').hide();
-
 
 
     google.maps.event.addListener(marker, 'click', function() {
@@ -344,7 +342,18 @@
     });
   }
 
-
+  function configureRestaurantOpenNow() {
+    function removeMarkers() {
+      for (i = 0; i < myMarkers.length; i++) {
+        myMarkers[i].setMap(null)
+      }
+    }
+    let openNowButton = document.getElementById('open-button');
+    openNowButton.addEventListener('click', function() {
+      removeMarkers();
+      performSearch("Restaurants open now in");
+    });
+  }
 
   function configureRestaurantButton() {
     function removeMarkers() {
@@ -403,6 +412,7 @@
 
 
   initMap();
+  configureRestaurantOpenNow();
   configureRestaurantButton();
   configureRandomRestaurant();
   configureMealTime();

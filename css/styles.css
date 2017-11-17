@@ -11,9 +11,14 @@ html, body {
 
 }
 
+/*#loadingmessage{
+  height:1px;
+  width:1px;
+}*/
+
 .text-box {
   background-color: white;
-  margin-top: 5%;
+  margin-top: 2%;
   /*border: solid;*/
 }
 
@@ -60,11 +65,10 @@ html, body {
   z-index: -1;
   height: 100%;
   width: 100%;
-  margin: contain;
   background-image: url("https://www.rd.com/wp-content/uploads/2016/02/april-2016-aol-food-carrots.jpg");
   position: absolute;
   background-repeat: no-repeat;
-  background-position:cover;
+
 }
 
 .heading-lets-eat {

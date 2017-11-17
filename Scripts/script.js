@@ -275,17 +275,16 @@
       keyword: searchTerm
     };
     service.radarSearch(request, setMarkers);
+
   }
 
   function setMarkers(results, status) {
     if (status !== google.maps.places.PlacesServiceStatus.OK) {
-        window.alert("Please choose another item or new location!");
+      window.alert("Please choose another item or new location!");
       console.error(status);
       return;
     }
     for (let i = 0, result; result = results[i]; i++) {
-
-      //results.length.Random....
       addMarker(result);
 
 
@@ -298,12 +297,13 @@
       bounds: map.getBounds(),
       keyword: searchTerm
     };
+    // $('#loadingmessage').show();
     service.radarSearch(request, randomSetMarkers);
   }
 
   function randomSetMarkers(results, status) {
     if (status !== google.maps.places.PlacesServiceStatus.OK) {
-          window.alert("Please choose another item or new location!");
+      window.alert("Please choose another item or new location!");
       console.error(status);
       return;
     }
@@ -327,13 +327,8 @@
 
     });
     myMarkers.push(marker);
+      // $('#loadingmessage').hide();
 
-
-    // function removeMarkers() {
-    //   for (i = 0; i < myMarkers.length; i++) {
-    //     myMarkers[i].setMap(null);
-    //   }
-    // }
 
 
     google.maps.event.addListener(marker, 'click', function() {
@@ -343,7 +338,7 @@
           return;
         }
         infoWindow.setContent(result.name + '<div><strong>' +
-          result.formatted_address + '</div>' + result.url + '</div>' + result.phone);
+          result.formatted_address + '</div>' + result.website + '</div>' + " " + result.formatted_phone_number + '</div>');
         infoWindow.open(map, marker);
       });
     });
@@ -354,14 +349,14 @@
   function configureRestaurantButton() {
     function removeMarkers() {
       for (i = 0; i < myMarkers.length; i++) {
-        myMarkers[i].setMap(null);
+        myMarkers[i].setMap(null)
       }
     }
     let foodButton = document.getElementById('food-button');
     foodButton.addEventListener('click', function() {
       removeMarkers();
       let foodSelectElement = $('#foodType option:selected');
-      performSearch(foodSelectElement.text() + " " + "Restaurants");
+      performSearch(foodSelectElement.text()+ " " + "in");
     });
   }
 
@@ -376,21 +371,21 @@
     randomButton.addEventListener('click', function() {
       removeMarkers();
       let foodSelectElement = $('#foodType option:selected');
-      randomSearch(foodSelectElement.text() + " " + "Restaurants");
+      randomSearch(foodSelectElement.text()+ " " + "in");
     });
   }
 
-  function configureRatingRestaurant() {
+  function configureMealTime() {
     function removeMarkers() {
       for (i = 0; i < myMarkers.length; i++) {
         myMarkers[i].setMap(null);
       }
     }
-    let randomButton = document.getElementById('rating-button');
-    randomButton.addEventListener('click', function() {
+    let mealButton = document.getElementById('rating-button');
+    mealButton.addEventListener('click', function() {
       removeMarkers();
       let ratingSelectElement = $('#starType option:selected');
-      performSearch(ratingSelectElement.text() + " " + "Restaurants");
+      performSearch(ratingSelectElement.text() + " " + "in");
     });
   }
 
@@ -410,6 +405,6 @@
   initMap();
   configureRestaurantButton();
   configureRandomRestaurant();
-  configureRatingRestaurant();
+  configureMealTime();
 
 })();

@@ -27,11 +27,19 @@
 
     <header class="index-header">
 
+    <div class="row">
+      <div class="col-sm-2"></div>
+
+        <div class = "col-sm-8">
       <div class="wrap">
         <h2 class="heading-lets-eat">Let's Eat</h2>
         <h2 class="heading-lets-eat"> Pick & Click</h2>
-
       </div>
+    </div>
+    <div class = "col-sm-2">
+    </div>
+
+    </div>
     </header>
 
 
@@ -43,7 +51,14 @@
         <div class="wrap">
           <input id="pac-input" class="controls" type="text" placeholder="Enter a location"></div>
 
-        <div id="foodMap" class="foodMap"></div>
+
+
+        <div id="foodMap" class="foodMap">
+          <div id='loadingmessage' style='display:none'>
+            <img  src='https://app.joinmunch.com/upload/design/1b92a09d8_aa820_Thai_Noodles.gif'/>
+          </div>
+
+        </div>
 
         <div id="infowindow-content">
           <img src="" width="14" height="14" id="place-icon">
@@ -67,16 +82,16 @@
                 <label for="sel1">Select a food!</label>
                 <select class="form-control" id="foodType">
                   <option>Pizza</option>
-                  <option>Chinese</option>
+                  <option>Dim-Sum</option>
                   <option>Sushi</option>
                   <option>Italian</option>
-                  <option>Burger</option>
-                  <option>Taco</option>
+                  <option>Burgers</option>
+                  <option>Tacos</option>
                   <option>Indian</option>
-                  <option>Thai/option>
+                  <option>Thai</option>
                   <option>BBQ</option>
-                  <option>Mexican</option>
-                  <option>Sandwich</option>
+                  <option>Tex-Mex</option>
+                  <option>Sandwiches</option>
                   <option>Steakhouse</option>
                 </select>
               </div>

@@ -351,7 +351,7 @@
     let openNowButton = document.getElementById('open-button');
     openNowButton.addEventListener('click', function() {
       removeMarkers();
-      performSearch("Restaurants open now in");
+      performSearch("Restaurants open in");
     });
   }
 
@@ -412,9 +412,8 @@
 
 
   initMap();
-  configureRestaurantOpenNow();
   configureRestaurantButton();
   configureRandomRestaurant();
   configureMealTime();
-
+  configureRestaurantOpenNow();
 })();

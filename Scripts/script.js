@@ -232,8 +232,6 @@
       marker.setVisible(false);
       var place = autocomplete.getPlace();
       if (!place.geometry) {
-        // User entered the name of a Place that was not suggested and
-        // pressed the Enter key, or the Place Details request failed.
         window.alert("No details available for input: '" + place.name + "'");
         return;
       }
@@ -281,7 +279,7 @@
 
   function setMarkers(results, status) {
     if (status !== google.maps.places.PlacesServiceStatus.OK) {
-
+        window.alert("Please choose another item or new location!");
       console.error(status);
       return;
     }
@@ -305,7 +303,7 @@
 
   function randomSetMarkers(results, status) {
     if (status !== google.maps.places.PlacesServiceStatus.OK) {
-
+          window.alert("Please choose another item or new location!");
       console.error(status);
       return;
     }
@@ -363,7 +361,7 @@
     foodButton.addEventListener('click', function() {
       removeMarkers();
       let foodSelectElement = $('#foodType option:selected');
-      performSearch(foodSelectElement.text());
+      performSearch(foodSelectElement.text() + " " + "Restaurants");
     });
   }
 
@@ -378,7 +376,7 @@
     randomButton.addEventListener('click', function() {
       removeMarkers();
       let foodSelectElement = $('#foodType option:selected');
-      randomSearch(foodSelectElement.text());
+      randomSearch(foodSelectElement.text() + " " + "Restaurants");
     });
   }
 
@@ -392,9 +390,19 @@
     randomButton.addEventListener('click', function() {
       removeMarkers();
       let ratingSelectElement = $('#starType option:selected');
-      performSearch(ratingSelectElement.text());
+      performSearch(ratingSelectElement.text() + " " + "Restaurants");
     });
   }
+
+
+  // $('#img').show(); //<----here
+  //   $.ajax({
+  //     ....
+  //    success:function(result){
+  //        $('#img').hide();
+
+
+
 
 
 

@@ -365,7 +365,7 @@
     foodButton.addEventListener('click', function() {
       removeMarkers();
       let foodSelectElement = $('#foodType option:selected');
-      performSearch(foodSelectElement.text()+ " " + "in");
+      performSearch(foodSelectElement.text() + " " + "in");
     });
   }
 
@@ -380,7 +380,7 @@
     randomButton.addEventListener('click', function() {
       removeMarkers();
       let foodSelectElement = $('#foodType option:selected');
-      randomSearch(foodSelectElement.text()+ " " + "in");
+      randomSearch(foodSelectElement.text() + " " + "in");
     });
   }
 

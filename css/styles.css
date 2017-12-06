@@ -8,12 +8,10 @@ html, body {
   box-shadow: 0 3px 0 0 #007299;
   font-family: 'Merienda';
   margin: 1%;
-
 }
 
-.image-loading{
+.image-loading {
   position: absolute;
-
 }
 
 .text-box {
@@ -30,7 +28,6 @@ html, body {
   margin-left: 20%;
   margin-right: 20%;
   text-align: center;
-
 }
 
 .carousel {
@@ -60,7 +57,8 @@ html, body {
   height: 10%;
   text: black;
 }
-#open-button{
+
+#open-button {
   margin-top: 20%;
 }
 
@@ -71,7 +69,6 @@ html, body {
   background-image: url("https://www.rd.com/wp-content/uploads/2016/02/april-2016-aol-food-carrots.jpg");
   position: absolute;
   background-repeat: no-repeat;
-
 }
 
 .heading-lets-eat {
@@ -96,8 +93,6 @@ h2 {
 .foodMap {
   height: 400pt;
 }
-
-
 
 .controls {
   background-color: #fff;

@@ -1,23 +1,7 @@
-Quarter One Project
+Random Eats
 
-For my project I would like to create a program that will allow users to spin a wheel in order to find a random restaurant in their area. Based on a few choices made through a form prior to spinning (they will at the very least set their zip code) will allow the program to fetch restaurants in their area from Zomato’s API. Stretch goals will be to have a form that can dynamically accept multiple preferences; food type, meal time etc.. and return a random restaurant based on those preferences.
+Random Eats is a restaurant application that uses the Google places API to retrieve restaurant information based on the users preferences. The user is able to pick a food preference and find a random restaurant or all restaurants in the area based on that food. They also can find all restaurants currently open in the area or all restaurants based on a meal time. (Breakfast, Lunch, Dinner). The user can use the search bar within the map to look for restaurants within a different location. The map defaults to Austin but the user can search for restaurants anywhere in the world.
 
-Once the user has filled out the form with their location and other preferences, they will be able to push the “Spin to Eat button”. If required preferences, such as location, have not been filled out, the user will be thrown an alert and be required to fill the zip code field. Once the wheel is spun a call will be made to the api based on the users location and restaurants open in the area.
+The application was created with Bootstrap, HTML5, CSS, Javascript and jQuery. It uses the Google places API to retrieve restaurant information.
 
-These results will be rendered and another function will run to select a random restaurant. If the user does not like the restaurant they may spin again.  If they do not like the preferences that they have set they can reset the form and begin again.
-
-
-Technical Requirements
-
--Structure: HTML5
--Styling:  SCSS
--Javascript:  Vanilla JS/ possibly using PIXI and JQuery
--Front End Framework: Materialize
--Form: Queries passed to API
--API: Zomato
--Deployment: Surge
-
-
-
-Stock Photos
-https://www.pexels.com/search/food/
+Images were provided by www.pexels.com

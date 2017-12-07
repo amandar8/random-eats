@@ -9,6 +9,13 @@ Future goals will include:
 
 - Adding the ability to access a restaurants website directly from the app.
 
+
+Stretch Goals:
+
+- CRUD Database
+
+- Ability for users to create, update and delete restaurant lists
+
 The application was created with Bootstrap, HTML5, CSS, Javascript and jQuery. It uses the Google places API to retrieve restaurant information and is mobile friendly.
 
 Images were provided by www.pexels.com
